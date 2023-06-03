@@ -41,6 +41,9 @@ public class VehicleRegistration {
     @NotBlank(message = "Total no of stage`s point shouldn't be empty")
     private String noOfStages;
 
+    @NotNull(message = "Vehicle type Ac/Non-Ac shouldn't be null")
+    @NotBlank(message = "Vehicle type Ac/Non-Ac point shouldn't be empty")
+    private String vehicleTypeACNonAC;
 
     @OneToMany(targetEntity = VehicleStagesRegistration.class, cascade = CascadeType.ALL)
     @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
