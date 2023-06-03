@@ -2,6 +2,7 @@ package in.gmsk.controller;
 
 import in.gmsk.model.RegistrationTravelOwner;
 import in.gmsk.service.RegTravelOwnerService;
+import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -23,9 +24,9 @@ public class TravelsOwnerController {
         this.service = service;
     }
 
-    @PostMapping("/save")
+    @PostMapping("/registration")
     public ResponseEntity<RegistrationTravelOwner> saveTravelsOwners(
-            @RequestBody RegistrationTravelOwner travelOwner){
+            @RequestBody @Valid RegistrationTravelOwner travelOwner){
         logger.info("save the travels owner details : {} ",travelOwner);
         return new ResponseEntity<>(service.saveTravelsOwnerDetails(travelOwner), HttpStatus.CREATED);
     }

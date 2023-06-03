@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.*;
 import lombok.Data;
 
+import java.util.List;
+
 @Entity
 @Data
 @Table(name = "travels_owner_details")
@@ -51,4 +53,8 @@ public class RegistrationTravelOwner {
     @NotNull(message = "Manager address shouldn't be null")
     @NotBlank(message = "Manager address shouldn't be empty")
     private String mangerAddress;
+
+    @OneToMany(targetEntity = VehicleRegistration.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "owner_fk", referencedColumnName = "id")
+    private List<VehicleRegistration> vehicleDetails;
 }
