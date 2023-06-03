@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/v1/travels/owner")
+@RequestMapping("/api/v1/travels/owners")
 public class TravelsOwnerController {
 
     private Logger logger = LoggerFactory.getLogger(TravelsOwnerController.class);
