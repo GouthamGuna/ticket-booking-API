@@ -3,7 +3,6 @@ package in.gmsk.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 import java.util.List;
@@ -38,11 +37,11 @@ public class VehicleRegistration {
     private String endingPoint;
 
     @NotNull(message = "Total no of stage`s shouldn't be null")
-    @NotBlank(message = "Total no of stage`s point shouldn't be empty")
+    @NotBlank(message = "Total no of stage`s shouldn't be empty")
     private String noOfStages;
 
-    @NotNull(message = "Vehicle type Ac/Non-Ac shouldn't be null")
-    @NotBlank(message = "Vehicle type Ac/Non-Ac point shouldn't be empty")
+    @NotNull(message = "Vehicle type shouldn't be null")
+    @NotBlank(message = "Vehicle type shouldn't be empty")
     private String vehicleTypeACNonAC;
 
     @OneToMany(targetEntity = VehicleStagesRegistration.class, cascade = CascadeType.ALL)
