@@ -1,8 +1,8 @@
 package in.gmsk.service;
 
-import in.gmsk.model.RegistrationTravelOwner;
+import in.gmsk.model.VehicleOwnersRegistration;
 
 public interface RegTravelOwnerService {
 
-    RegistrationTravelOwner saveTravelsOwnerDetails(RegistrationTravelOwner travelOwner);
+    VehicleOwnersRegistration saveTravelsOwnerDetails(VehicleOwnersRegistration travelOwner);
 }

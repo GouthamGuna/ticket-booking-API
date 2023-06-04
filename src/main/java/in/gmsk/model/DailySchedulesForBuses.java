@@ -1,13 +1,13 @@
 package in.gmsk.model;
 
+
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 
-/*@Entity
 @Data
-@Table(name = "daily_travels_update")*/
+@Entity
+@Table(name = "daily_vehicle_update")
 public class DailySchedulesForBuses {
 
     @Id
