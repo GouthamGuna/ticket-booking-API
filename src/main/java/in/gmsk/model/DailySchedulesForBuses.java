@@ -5,9 +5,9 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
-@Entity
+/*@Entity
 @Data
-@Table(name = "daily_travels_update")
+@Table(name = "daily_travels_update")*/
 public class DailySchedulesForBuses {
 
     @Id
