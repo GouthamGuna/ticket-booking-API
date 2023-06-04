@@ -3,15 +3,13 @@ package in.gmsk.model;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
-import java.util.List;
 import java.util.Set;
 
 @Entity
 @Data
-@Table(name = "vehicle_registration")
+@Table(name = "registered_vehicles")
 public class VehicleRegistration {
 
     @Id
@@ -46,11 +44,7 @@ public class VehicleRegistration {
     @NotBlank(message = "Vehicle type Ac/Non-Ac point shouldn't be empty")
     private String vehicleTypeACNonAC;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "vehicle_stage_names", joinColumns = @JoinColumn(name = "vehicle_fk"))
     private Set<String> stageName;
-
-   /* @OneToMany(targetEntity = VehicleStagesRegistration.class, cascade = CascadeType.ALL)
-    @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "vehicle_stage_reg", joinColumns = @JoinColumn(name = "vehicle_fk"))
-    private List<VehicleStagesRegistration> stagesNameRegistration;*/
 }
