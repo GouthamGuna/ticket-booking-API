@@ -1,7 +1,6 @@
 package in.gmsk.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
@@ -11,6 +10,8 @@ import lombok.Data;
 @Table(name = "daily_travels_update")
 public class DailySchedulesForBuses {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @NotNull(message = "vehicle name shouldn't be null")
