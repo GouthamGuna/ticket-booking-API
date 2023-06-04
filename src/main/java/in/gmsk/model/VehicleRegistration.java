@@ -7,6 +7,7 @@ import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Data
@@ -45,8 +46,11 @@ public class VehicleRegistration {
     @NotBlank(message = "Vehicle type Ac/Non-Ac point shouldn't be empty")
     private String vehicleTypeACNonAC;
 
-    @OneToMany(targetEntity = VehicleStagesRegistration.class, cascade = CascadeType.ALL)
+    @ElementCollection
+    private Set<String> stageName;
+
+   /* @OneToMany(targetEntity = VehicleStagesRegistration.class, cascade = CascadeType.ALL)
     @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "vehicle_stage_reg", joinColumns = @JoinColumn(name = "vehicle_fk",  referencedColumnName = "id"))
-    private List<VehicleStagesRegistration> stagesNameRegistration;
+    @CollectionTable(name = "vehicle_stage_reg", joinColumns = @JoinColumn(name = "vehicle_fk"))
+    private List<VehicleStagesRegistration> stagesNameRegistration;*/
 }
