@@ -1,8 +1,8 @@
 package in.gmsk.repository;
 
-import in.gmsk.model.DailySchedulesForBuses;
+import in.gmsk.model.VehicleDailySchedules;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 @Repository
-public interface DailySchedulesRepo extends JpaRepository<DailySchedulesForBuses, Integer> {
+public interface VehicleSchedulesRepo extends JpaRepository<VehicleDailySchedules, Integer> {
 }
