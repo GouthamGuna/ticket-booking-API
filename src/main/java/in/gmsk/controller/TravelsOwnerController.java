@@ -1,6 +1,6 @@
 package in.gmsk.controller;
 
-import in.gmsk.model.VehicleOwnersRegistration;
+import in.gmsk.model.VehicleOwnerRegistration;
 import in.gmsk.service.RegTravelOwnerService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -25,8 +25,8 @@ public class TravelsOwnerController {
     }
 
     @PostMapping("/registration")
-    public ResponseEntity<VehicleOwnersRegistration> saveTravelsOwners(
-            @RequestBody @Valid VehicleOwnersRegistration travelOwner){
+    public ResponseEntity<VehicleOwnerRegistration> saveTravelsOwners(
+            @RequestBody @Valid VehicleOwnerRegistration travelOwner){
         logger.info("save the travels owner details : {} ",travelOwner);
         return new ResponseEntity<>(service.saveTravelsOwnerDetails(travelOwner), HttpStatus.CREATED);
     }

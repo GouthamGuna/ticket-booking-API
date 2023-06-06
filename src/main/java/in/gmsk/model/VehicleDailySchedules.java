@@ -22,13 +22,13 @@ public class DailySchedulesForBuses {
     @NotBlank(message = "Traveling date shouldn't be empty")
     private String travelingDate;
 
-    @NotNull(message = "Traveling from shouldn't be null")
-    @NotBlank(message = "Traveling from shouldn't be empty")
-    private String from;
+    @NotNull(message = "Starting boarding shouldn't be null")
+    @NotBlank(message = "Starting boarding shouldn't be empty")
+    private String startingBoarding;
 
-    @NotNull(message = "Traveling to shouldn't be null")
-    @NotBlank(message = "Traveling to shouldn't be empty")
-    private String to;
+    @NotNull(message = "Ending boarding shouldn't be null")
+    @NotBlank(message = "Ending boarding shouldn't be empty")
+    private String endingBoarding;
 
     @NotNull(message = "No of seat shouldn't be null")
     @NotBlank(message = "No of seat shouldn't be empty")
