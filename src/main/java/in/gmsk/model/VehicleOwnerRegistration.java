@@ -8,12 +8,12 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "travels_owner_details")
-public class RegistrationTravelOwner {
+@Table(name = "vehicle_owners")
+public class VehicleOwnerRegistration {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public int id;
+    public int ownerPID;
 
     @NotBlank(message = "Travels name shouldn't be empty")
     private String travelsName;
@@ -55,6 +55,6 @@ public class RegistrationTravelOwner {
     private String mangerAddress;
 
     @OneToMany(targetEntity = VehicleRegistration.class, cascade = CascadeType.ALL)
-    @JoinColumn(name = "owner_fk", referencedColumnName = "id")
+    @JoinColumn(name = "owner_fk", referencedColumnName = "ownerPID")
     private List<VehicleRegistration> vehicleDetails;
 }

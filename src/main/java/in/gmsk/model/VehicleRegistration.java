@@ -9,12 +9,12 @@ import java.util.List;
 
 @Entity
 @Data
-@Table(name = "vehicle_registration")
+@Table(name = "registered_vehicles")
 public class VehicleRegistration {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int vehiclePID;
 
     @NotNull(message = "vehicle reg.no shouldn't be null")
     @NotBlank(message = "vehicle reg.no shouldn't be empty")
@@ -44,8 +44,15 @@ public class VehicleRegistration {
     @NotBlank(message = "Vehicle type shouldn't be empty")
     private String vehicleTypeACNonAC;
 
-    @OneToMany(targetEntity = VehicleStagesRegistration.class, cascade = CascadeType.ALL)
-    @ElementCollection(targetClass = String.class, fetch = FetchType.EAGER)
-    @CollectionTable(name = "vehicle_stage_reg", joinColumns = @JoinColumn(name = "vehicle_fk",  referencedColumnName = "id"))
-    private List<VehicleStagesRegistration> stagesNameRegistration;
+    @NotNull(message = "Vehicle made shouldn't be null")
+    @NotBlank(message = "Vehicle made point shouldn't be empty")
+    private String vehicleMade;
+
+    @OneToMany(targetEntity = VehicleStageRegistration.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "vehicle_fk", referencedColumnName = "vehiclePID")
+    private List<VehicleStageRegistration> stageDetails;
+
+    /*@ElementCollection(fetch = FetchType.EAGER)
+    @CollectionTable(name = "vehicle_stage_names", joinColumns = @JoinColumn(name = "vehicle_fk"))
+    private Set<String> stageName;*/
 }

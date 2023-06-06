@@ -1,16 +1,17 @@
 package in.gmsk.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.NotNull;
+
+import jakarta.persistence.*;
+import jakarta.validation.constraints.*;
 import lombok.Data;
 
-@Entity
 @Data
-@Table(name = "daily_travels_update")
-public class DailySchedulesForBuses {
+@Entity
+@Table(name = "daily_vehicle_update")
+public class VehicleDailySchedules {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @NotNull(message = "vehicle name shouldn't be null")
@@ -21,13 +22,13 @@ public class DailySchedulesForBuses {
     @NotBlank(message = "Traveling date shouldn't be empty")
     private String travelingDate;
 
-    @NotNull(message = "Traveling from shouldn't be null")
-    @NotBlank(message = "Traveling from shouldn't be empty")
-    private String from;
+    @NotNull(message = "Starting boarding shouldn't be null")
+    @NotBlank(message = "Starting boarding shouldn't be empty")
+    private String startingBoarding;
 
-    @NotNull(message = "Traveling to shouldn't be null")
-    @NotBlank(message = "Traveling to shouldn't be empty")
-    private String to;
+    @NotNull(message = "Ending boarding shouldn't be null")
+    @NotBlank(message = "Ending boarding shouldn't be empty")
+    private String endingBoarding;
 
     @NotNull(message = "No of seat shouldn't be null")
     @NotBlank(message = "No of seat shouldn't be empty")
