@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Data
@@ -14,7 +14,7 @@ public class VehicleRegistration {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int vehiclePID;
 
     @NotNull(message = "vehicle reg.no shouldn't be null")
     @NotBlank(message = "vehicle reg.no shouldn't be empty")
@@ -44,7 +44,15 @@ public class VehicleRegistration {
     @NotBlank(message = "Vehicle type Ac/Non-Ac point shouldn't be empty")
     private String vehicleTypeACNonAC;
 
-    @ElementCollection(fetch = FetchType.EAGER)
+    @NotNull(message = "Vehicle made shouldn't be null")
+    @NotBlank(message = "Vehicle made point shouldn't be empty")
+    private String vehicleMade;
+
+    @OneToMany(targetEntity = VehicleStageRegistration.class, cascade = CascadeType.ALL)
+    @JoinColumn(name = "vehicle_fk", referencedColumnName = "vehiclePID")
+    private List<VehicleStageRegistration> stageDetails;
+
+    /*@ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name = "vehicle_stage_names", joinColumns = @JoinColumn(name = "vehicle_fk"))
-    private Set<String> stageName;
+    private Set<String> stageName;*/
 }
