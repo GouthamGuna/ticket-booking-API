@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "daily_vehicle_update")
-public class DailySchedulesForBuses {
+public class VehicleDailySchedules {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
