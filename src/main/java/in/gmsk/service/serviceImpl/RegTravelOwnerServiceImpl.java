@@ -1,21 +1,21 @@
 package in.gmsk.service.serviceImpl;
 
-import in.gmsk.model.VehicleOwnersRegistration;
-import in.gmsk.repository.VehicleOwnersRepo;
+import in.gmsk.model.VehicleOwnerRegistration;
+import in.gmsk.repository.VehicleOwnerRepo;
 import in.gmsk.service.RegTravelOwnerService;
 import org.springframework.stereotype.Service;
 
 @Service
 public class RegTravelOwnerServiceImpl implements RegTravelOwnerService {
 
-    private VehicleOwnersRepo repository;
+    private VehicleOwnerRepo repository;
 
-    public RegTravelOwnerServiceImpl(VehicleOwnersRepo repository){
+    public RegTravelOwnerServiceImpl(VehicleOwnerRepo repository){
         this.repository = repository;
     }
 
     @Override
-    public VehicleOwnersRegistration saveTravelsOwnerDetails(VehicleOwnersRegistration travelOwner) {
+    public VehicleOwnerRegistration saveTravelsOwnerDetails(VehicleOwnerRegistration travelOwner) {
         return repository.save(travelOwner);
     }
 }
