@@ -14,13 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api/v1/travels/owners")
-public class TravelsOwnerController {
+public class VehicleOwnerController {
 
-    private Logger logger = LoggerFactory.getLogger(TravelsOwnerController.class);
+    private Logger logger = LoggerFactory.getLogger(VehicleOwnerController.class);
 
     private RegTravelOwnerService service;
 
-    public TravelsOwnerController(RegTravelOwnerService service){
+    public VehicleOwnerController(RegTravelOwnerService service){
         this.service = service;
     }
 
