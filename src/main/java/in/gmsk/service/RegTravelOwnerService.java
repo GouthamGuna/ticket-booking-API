@@ -9,4 +9,8 @@ public interface RegTravelOwnerService {
     VehicleOwnerRegistration saveTravelsOwnerDetails(VehicleOwnerRegistration travelOwner);
 
     List<VehicleOwnerRegistration> fetchAllOwner();
+
+    VehicleOwnerRegistration fetchFindById(int id);
+
+    //VehicleOwnerRegistration updateTravelsOwnerDetails(VehicleOwnerRegistration travelOwner);
 }
