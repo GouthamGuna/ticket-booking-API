@@ -1,5 +1,6 @@
 package in.gmsk.service.serviceImpl;
 
+import in.gmsk.exception.ResourceNotFound;
 import in.gmsk.model.VehicleOwnerRegistration;
 import in.gmsk.repository.VehicleOwnerRepo;
 import in.gmsk.service.RegTravelOwnerService;
@@ -24,5 +25,11 @@ public class RegTravelOwnerServiceImpl implements RegTravelOwnerService {
     @Override
     public List<VehicleOwnerRegistration> fetchAllOwner() {
         return repository.findAll();
+    }
+
+    @Override
+    public VehicleOwnerRegistration fetchFindById(int id) {
+        return repository.findById(id).orElseThrow(() ->
+                new ResourceNotFound("ServiceImpl", "Reg Travel Owner ServiceImpl", id));
     }
 }
