@@ -35,4 +35,10 @@ public class VehicleOwnerController {
         logger.info("fetch all travels owners details.");
         return new ResponseEntity<>(service.fetchAllOwner(), HttpStatus.OK);
     }
+
+    @GetMapping("/fetchById/{id}")
+    public ResponseEntity<VehicleOwnerRegistration> FindById(@PathVariable int id){
+        logger.info("fetch by id travels owners details.");
+        return new ResponseEntity<>(service.fetchFindById(id), HttpStatus.OK);
+    }
 }
