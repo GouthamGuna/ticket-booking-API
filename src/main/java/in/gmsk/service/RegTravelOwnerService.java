@@ -12,5 +12,7 @@ public interface RegTravelOwnerService {
 
     VehicleOwnerRegistration fetchFindById(int id);
 
+    void deleteTravelsOwnerById (int id);
+
     //VehicleOwnerRegistration updateTravelsOwnerDetails(VehicleOwnerRegistration travelOwner);
 }
