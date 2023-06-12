@@ -32,4 +32,11 @@ public class RegTravelOwnerServiceImpl implements RegTravelOwnerService {
         return repository.findById(id).orElseThrow(() ->
                 new ResourceNotFound("ServiceImpl", "Reg Travel Owner ServiceImpl", id));
     }
+
+    @Override
+    public void deleteTravelsOwnerById(int id) {
+        repository.findById(id).orElseThrow(() ->
+                new ResourceNotFound("ServiceImpl", "Reg Travel Owner ServiceImpl", id));
+        repository.deleteById(id);
+    }
 }
