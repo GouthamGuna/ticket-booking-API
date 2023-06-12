@@ -1,6 +1,7 @@
 package in.gmsk.controller;
 
 import in.gmsk.model.VehicleOwnerRegistration;
+import in.gmsk.response.DeleteResponse;
 import in.gmsk.service.RegTravelOwnerService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -40,5 +41,13 @@ public class VehicleOwnerController {
     public ResponseEntity<VehicleOwnerRegistration> FindById(@PathVariable int id){
         logger.info("fetch by id travels owners details.");
         return new ResponseEntity<>(service.fetchFindById(id), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/deleteById/{id}")
+    public ResponseEntity< DeleteResponse > deleteTravelsOwnerDetails(@PathVariable int id){
+        logger.info("delete by id travels owner`s details.");
+        service.deleteTravelsOwnerById(id);
+        return new ResponseEntity<>(new DeleteResponse(
+                "The owner's information for Travels has been successfully deleted."), HttpStatus.OK);
     }
 }
