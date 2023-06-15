@@ -43,6 +43,14 @@ public class VehicleOwnerController {
         return new ResponseEntity<>(service.fetchFindById(id), HttpStatus.OK);
     }
 
+    @PutMapping("/update/{id}")
+    public ResponseEntity<VehicleOwnerRegistration> updateTravelsOwnerDetails(
+            @RequestBody @Valid VehicleOwnerRegistration travelOwner,
+            @PathVariable int id){
+        logger.info("update by travels owners details.");
+        return new ResponseEntity<>(service.updateTravelsOwnerDetails(travelOwner,id), HttpStatus.OK);
+    }
+
     @DeleteMapping("/deleteById/{id}")
     public ResponseEntity< DeleteResponse > deleteTravelsOwnerDetails(@PathVariable int id){
         logger.info("delete by id travels owner`s details.");
