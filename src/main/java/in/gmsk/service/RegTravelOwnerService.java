@@ -10,6 +10,8 @@ public interface RegTravelOwnerService {
 
     List<VehicleOwnerRegistration> fetchAllOwner();
 
+    VehicleOwnerRegistration updateTravelsOwnerDetails(VehicleOwnerRegistration travelOwner, int id);
+
     VehicleOwnerRegistration fetchFindById(int id);
 
     void deleteTravelsOwnerById (int id);
