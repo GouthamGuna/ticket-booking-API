@@ -33,21 +33,22 @@ public class SecurityConfiguration {
         return new InMemoryUserDetailsManager(admin, user);
     }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http.csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/welcome", "/api/addNewUser").permitAll()
+                .requestMatchers("/api/v1/travels/owners/registration").permitAll()
                 .and()
                 .authorizeHttpRequests()
                 .requestMatchers("/api/**").authenticated()
                 .and().formLogin()
                 .and().build();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
     @Bean
