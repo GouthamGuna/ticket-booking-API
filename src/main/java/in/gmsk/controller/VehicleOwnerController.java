@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,6 +26,7 @@ public class VehicleOwnerController {
     }
 
     @PostMapping("/registration")
+    //@PreAuthorize("hasAuthority('ROLE_USER')")
     public ResponseEntity<VehicleOwnerRegistration> saveTravelsOwners(
             @RequestBody @Valid VehicleOwnerRegistration travelOwner){
         logger.info("save the travels owner details : {} ",travelOwner);
@@ -32,18 +34,21 @@ public class VehicleOwnerController {
     }
 
     @GetMapping("/fetchAll")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<List<VehicleOwnerRegistration>> fetchAllOwnersDetails(){
         logger.info("fetch all travels owners details.");
         return new ResponseEntity<>(service.fetchAllOwner(), HttpStatus.OK);
     }
 
     @GetMapping("/fetchById/{id}")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<VehicleOwnerRegistration> FindById(@PathVariable int id){
         logger.info("fetch by id travels owners details.");
         return new ResponseEntity<>(service.fetchFindById(id), HttpStatus.OK);
     }
 
     @PutMapping("/update/{id}")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity<VehicleOwnerRegistration> updateTravelsOwnerDetails(
             @RequestBody @Valid VehicleOwnerRegistration travelOwner,
             @PathVariable int id){
@@ -52,6 +57,7 @@ public class VehicleOwnerController {
     }
 
     @DeleteMapping("/deleteById/{id}")
+    @PreAuthorize("hasAuthority('ROLE_ADMIN')")
     public ResponseEntity< DeleteResponse > deleteTravelsOwnerDetails(@PathVariable int id){
         logger.info("delete by id travels owner`s details.");
         service.deleteTravelsOwnerById(id);
