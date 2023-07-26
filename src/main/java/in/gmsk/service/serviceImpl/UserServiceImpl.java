@@ -17,6 +17,7 @@ public class UserServiceImpl implements UserService {
     }
     @Override
     public String addUser(UserInfo userInfo) {
+        System.out.println("userInfo.getPassword() : " + userInfo.getPassword());
         userInfo.setPassword(passwordEncoder.encode(userInfo.getPassword()));
         repository.save(userInfo);
         return "Successfully added a user.";
