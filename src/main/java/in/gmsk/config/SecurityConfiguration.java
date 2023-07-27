@@ -22,7 +22,7 @@ public class SecurityConfiguration {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        UserDetails admin = User.withUsername("gowtham")  // authentication use PasswordEncoder encoder
+        /*UserDetails admin = User.withUsername("gowtham")  // authentication use PasswordEncoder encoder
                 .password(passwordEncoder().encode("Pwd1"))
                 .roles("ADMIN")
                 .build();
@@ -30,7 +30,9 @@ public class SecurityConfiguration {
                 .password(passwordEncoder().encode("Pwd2"))
                 .roles("USER")
                 .build();
-        return new InMemoryUserDetailsManager(admin, user);
+        return new InMemoryUserDetailsManager(admin, user);*/
+
+        return new UserInfoUserDetailsService();
     }
 
 
