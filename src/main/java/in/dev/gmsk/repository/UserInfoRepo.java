@@ -1,6 +1,6 @@
-package in.gmsk.repository;
+package in.dev.gmsk.repository;
 
-import in.gmsk.model.UserInfo;
+import in.dev.gmsk.model.UserInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

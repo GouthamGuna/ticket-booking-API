@@ -1,4 +1,4 @@
-package in.gmsk.advice;
+package in.dev.gmsk.advice;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.MethodArgumentNotValidException;

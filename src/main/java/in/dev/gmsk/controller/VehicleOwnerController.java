@@ -1,8 +1,8 @@
-package in.gmsk.controller;
+package in.dev.gmsk.controller;
 
-import in.gmsk.model.VehicleOwnerRegistration;
-import in.gmsk.response.DeleteResponse;
-import in.gmsk.service.RegTravelOwnerService;
+import in.dev.gmsk.model.VehicleOwnerRegistration;
+import in.dev.gmsk.response.DeleteResponse;
+import in.dev.gmsk.service.RegTravelOwnerService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

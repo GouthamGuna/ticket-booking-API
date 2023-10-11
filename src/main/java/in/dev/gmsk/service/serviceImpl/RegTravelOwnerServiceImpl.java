@@ -1,9 +1,9 @@
-package in.gmsk.service.serviceImpl;
+package in.dev.gmsk.service.serviceImpl;
 
-import in.gmsk.exception.ResourceNotFound;
-import in.gmsk.model.VehicleOwnerRegistration;
-import in.gmsk.repository.VehicleOwnerRepo;
-import in.gmsk.service.RegTravelOwnerService;
+import in.dev.gmsk.exception.ResourceNotFound;
+import in.dev.gmsk.repository.VehicleOwnerRepo;
+import in.dev.gmsk.model.VehicleOwnerRegistration;
+import in.dev.gmsk.service.RegTravelOwnerService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

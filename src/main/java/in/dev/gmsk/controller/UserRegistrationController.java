@@ -1,8 +1,8 @@
-package in.gmsk.controller;
+package in.dev.gmsk.controller;
 
-import in.gmsk.model.UserInfo;
-import in.gmsk.response.CreateUserResponse;
-import in.gmsk.service.serviceImpl.UserServiceImpl;
+import in.dev.gmsk.model.UserInfo;
+import in.dev.gmsk.response.CreateUserResponse;
+import in.dev.gmsk.service.serviceImpl.UserServiceImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

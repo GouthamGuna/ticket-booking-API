@@ -1,6 +1,6 @@
-package in.gmsk.service;
+package in.dev.gmsk.service;
 
-import in.gmsk.model.VehicleOwnerRegistration;
+import in.dev.gmsk.model.VehicleOwnerRegistration;
 
 import java.util.List;
 

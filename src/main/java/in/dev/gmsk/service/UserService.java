@@ -1,6 +1,6 @@
-package in.gmsk.service;
+package in.dev.gmsk.service;
 
-import in.gmsk.model.UserInfo;
+import in.dev.gmsk.model.UserInfo;
 
 public interface UserService {
 

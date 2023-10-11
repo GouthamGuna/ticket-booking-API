@@ -1,4 +1,4 @@
-package in.gmsk.model;
+package in.dev.gmsk.model;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.*;

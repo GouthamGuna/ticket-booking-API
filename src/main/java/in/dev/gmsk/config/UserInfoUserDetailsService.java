@@ -1,7 +1,7 @@
-package in.gmsk.config;
+package in.dev.gmsk.config;
 
-import in.gmsk.model.UserInfo;
-import in.gmsk.repository.UserInfoRepo;
+import in.dev.gmsk.repository.UserInfoRepo;
+import in.dev.gmsk.model.UserInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

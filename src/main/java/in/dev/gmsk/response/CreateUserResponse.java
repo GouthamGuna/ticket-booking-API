@@ -1,4 +1,4 @@
-package in.gmsk.response;
+package in.dev.gmsk.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

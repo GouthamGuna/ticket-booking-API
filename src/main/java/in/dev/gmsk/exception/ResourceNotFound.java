@@ -1,4 +1,4 @@
-package in.gmsk.exception;
+package in.dev.gmsk.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

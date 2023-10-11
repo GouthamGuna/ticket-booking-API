@@ -1,6 +1,6 @@
-package in.gmsk.config;
+package in.dev.gmsk.config;
 
-import in.gmsk.model.UserInfo;
+import in.dev.gmsk.model.UserInfo;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
