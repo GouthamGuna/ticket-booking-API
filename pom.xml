@@ -15,6 +15,8 @@
     <description>Spring Boot ticket booking API</description>
 
     <properties>
+        <security.version>3.0.9</security.version>
+        <mysql.version>8.0.33</mysql.version>
         <java.version>17</java.version>
     </properties>
 
@@ -22,7 +24,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
-            <version>3.0.6</version>
+            <version>${security.version}</version>
         </dependency>
 
         <dependency>
@@ -53,11 +55,18 @@
             <optional>true</optional>
         </dependency>
 
-        <dependency>
+        <!--<dependency>
             <groupId>org.postgresql</groupId>
             <artifactId>postgresql</artifactId>
             <scope>runtime</scope>
+        </dependency>-->
+
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql.version}</version>
         </dependency>
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
