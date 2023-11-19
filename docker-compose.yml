@@ -8,16 +8,16 @@ services:
     environment:
       SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/ticket_booking?autoReconnect=true&allowPublicKeyRetrieval=true&useSSL=false
       SPRING_DATASOURCE_USERNAME: root
-      SPRING_DATASOURCE_PASSWORD: root@asus
+      SPRING_DATASOURCE_PASSWORD: admin
     depends_on:
       - db
 
   db:
     image: mysql:8.0.35-debian
     environment:
-      DATABASE_HOST: localhost
+      DATABASE_HOST: docker-mysql
       DATABASE_PORT: 3306
-      MYSQL_ROOT_PASSWORD: root@asus
+      MYSQL_ROOT_PASSWORD: admin
       MYSQL_DATABASE: ticket_booking
       MYSQL_USER: root
-      MYSQL_PASSWORD: root@asus
+      MYSQL_PASSWORD: admin
