@@ -13,15 +13,15 @@ import java.util.Date;
 @Aspect
 @Component
 public class VehicleOwnerAspect {
-    private Logger logger = LoggerFactory.getLogger(VehicleOwnerAspect.class);
+    private final Logger logger = LoggerFactory.getLogger(VehicleOwnerAspect.class);
 
     @Before(value = "execution(* in.dev.gmsk.controller.VehicleOwnerController.*(..))")
     public void beforeCallingMethod(JoinPoint joinpoint){
-        logger.debug("Requesting to {} End time : "+ new Date(), joinpoint.getSignature());
+        logger.info("Requesting to {} End time : %s".formatted(new Date()), joinpoint.getSignature());
     }
 
     @After(value = "execution(* in.dev.gmsk.controller.VehicleOwnerController.*(..))")
     public void afterCallingMethod(JoinPoint joinpoint){
-        System.out.println("Requesting to "+ joinpoint.getSignature() +" End time : "+ new Date());
+        logger.info("Requesting to {} End time : %s".formatted(new Date()), joinpoint.getSignature());
     }
 }
