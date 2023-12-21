@@ -1,2 +1,9 @@
-package in.dev.gmsk.service;public interface UniqueIdentifierGeneratorService {
+package in.dev.gmsk.service;
+
+import java.util.UUID;
+
+public interface UniqueIdentifierGeneratorService {
+    String generateUid();
+
+    UUID fromHostAndCurrentTime();
 }
